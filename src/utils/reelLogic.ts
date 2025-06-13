@@ -1,7 +1,7 @@
-export function generateSpin(symbols, rng, reels = 5, rows = 3) {
-    const grid = [];
+export function generateSpin(symbols: string[], rng: () => number, reels = 5, rows = 3): string[][] {
+    const grid: string[][] = [];
     for (let i = 0; i < reels; i++) {
-        const column = [];
+        const column: string[] = [];
         for (let j = 0; j < rows; j++) {
             const index = Math.floor(rng() * symbols.length);
             column.push(symbols[index]);
@@ -11,7 +11,7 @@ export function generateSpin(symbols, rng, reels = 5, rows = 3) {
     return grid;
 }
 
-export function evaluateWin(grid, paylines) {
+export function evaluateWin(grid: string[][], paylines: number[][]): number {
     let totalWin = 0;
     paylines.forEach((line) => {
         const first = grid[0][line[0]];

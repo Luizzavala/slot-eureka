@@ -1,3 +1,9 @@
+interface PlaceholderSymbol {
+    key: string;
+    color: number;
+    label: string;
+}
+
 export default class BootScene extends Phaser.Scene {
     constructor() {
         super('BootScene');
@@ -7,9 +13,9 @@ export default class BootScene extends Phaser.Scene {
         // Here we could preload assets if we had real graphics or sounds
     }
 
-    create() {
+    create(): void {
         // Generate placeholder textures for symbols
-        const symbols = [
+        const symbols: PlaceholderSymbol[] = [
             { key: 'CHERRY', color: 0xff0000, label: 'C' },
             { key: 'LEMON', color: 0xffff00, label: 'L' },
             { key: 'ORANGE', color: 0xffa500, label: 'O' },
@@ -20,7 +26,7 @@ export default class BootScene extends Phaser.Scene {
             { key: 'SEVEN', color: 0xff0000, label: '7' }
         ];
 
-        symbols.forEach(({ key, color, label }) => {
+        symbols.forEach(({ key, color, label }): void => {
             const g = this.add.graphics();
             g.fillStyle(color, 1);
             g.fillRect(0, 0, 100, 100);
