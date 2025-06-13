@@ -1,5 +1,5 @@
-import BootScene from './scenes/BootScene.js';
-import GameScene from './scenes/GameScene.js';
+import BootScene from './src/scenes/BootScene.js';
+import GameScene from './src/scenes/GameScene.js';
 
 const config = {
     type: Phaser.AUTO,
