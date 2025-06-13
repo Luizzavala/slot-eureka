@@ -7,10 +7,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "main.ts", "globals.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

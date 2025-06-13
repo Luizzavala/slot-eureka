@@ -3,7 +3,6 @@ import paylines from './utils/paylines.js';
 import { mulberry32 } from './utils/rng.js';
 import Reel from './reels/Reel.js';
 import BalanceDisplay from './ui/BalanceDisplay.js';
-import * as Phaser from 'phaser';
 
 interface GameConfig {
     symbols: string[];

@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'assert';
-import { generateSpin, evaluateWin } from '../src/utils/reelLogic.js';
-import { mulberry32 } from '../src/utils/rng.js';
-import paylines from '../src/utils/paylines.js';
+import { generateSpin, evaluateWin } from '../dist/src/utils/reelLogic.js';
+import { mulberry32 } from '../dist/src/utils/rng.js';
+import paylines from '../dist/src/utils/paylines.js';
 
 const symbols = ['A', 'B', 'C'];
 
