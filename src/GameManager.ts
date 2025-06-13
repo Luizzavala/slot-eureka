@@ -4,8 +4,22 @@ import { mulberry32 } from './utils/rng.js';
 import Reel from './reels/Reel.js';
 import BalanceDisplay from './ui/BalanceDisplay.js';
 
+interface GameConfig {
+    symbols: string[];
+    startingBalance: number;
+    seed?: number;
+}
+
 export default class GameManager {
-    constructor(scene, config) {
+    private scene: Phaser.Scene;
+    private symbols: string[];
+    private balance: number;
+    private betPerLine: number;
+    private rng: () => number;
+    private reels: Reel[];
+    private ui: BalanceDisplay;
+
+    constructor(scene: Phaser.Scene, config: GameConfig) {
         this.scene = scene;
         this.symbols = config.symbols;
         this.balance = config.startingBalance;
@@ -17,7 +31,7 @@ export default class GameManager {
         this.ui.setBalance(this.balance);
     }
 
-    createReels() {
+    private createReels(): void {
         const startX = 150;
         for (let i = 0; i < 5; i++) {
             const reel = new Reel(this.scene, startX + i * 110, this.symbols);
@@ -25,7 +39,7 @@ export default class GameManager {
         }
     }
 
-    spin() {
+    spin(): void {
         if (this.balance < this.betPerLine * paylines.length) {
             return;
         }

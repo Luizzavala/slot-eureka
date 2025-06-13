@@ -2,11 +2,13 @@ import GameManager from '../GameManager.js';
 import config from '../config/gameConfig.js';
 
 export default class GameScene extends Phaser.Scene {
+    private manager!: GameManager;
+
     constructor() {
         super('GameScene');
     }
 
-    create() {
+    create(): void {
         this.manager = new GameManager(this, config);
 
         const spinBtn = this.add.rectangle(700, 500, 80, 40, 0x00ff00).setInteractive();

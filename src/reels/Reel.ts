@@ -1,7 +1,11 @@
 import Symbol from '../symbols/Symbol.js';
 
 export default class Reel {
-    constructor(scene, x, symbols) {
+    private scene: Phaser.Scene;
+    private position: number;
+    private symbols: Symbol[];
+
+    constructor(scene: Phaser.Scene, x: number, symbols: string[]) {
         this.scene = scene;
         this.position = x;
         this.symbols = [];
@@ -12,7 +16,7 @@ export default class Reel {
         }
     }
 
-    spin(results, index, tweenManager) {
+    spin(results: string[][], index: number, tweenManager: Phaser.Tweens.TweenManager): void {
         const column = this.symbols;
         for (let i = 0; i < column.length; i++) {
             const sprite = column[i];
@@ -29,7 +33,7 @@ export default class Reel {
         }
     }
 
-    getGridSymbols() {
+    getGridSymbols(): string[] {
         return this.symbols.map((s) => s.texture.key);
     }
 }
