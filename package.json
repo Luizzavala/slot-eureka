@@ -7,7 +7,9 @@
     "build": "vite build",
     "compile": "tsc",
     "test": "npm run compile && node --test",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint \"{src,tests}/**/*.{ts,js}\"",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\""
   },
   "dependencies": {
     "phaser": "^3.90.0"
@@ -15,6 +17,11 @@
   "devDependencies": {
     "typescript": "^5.8.3",
     "vite": "^6.0.0",
-    "vite-imagetools": "^7.1.0"
+    "vite-imagetools": "^7.1.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "eslint-config-prettier": "^9.1.0"
   }
 }

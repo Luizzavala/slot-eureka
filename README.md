@@ -34,6 +34,10 @@ npm run build
 La optimización de imágenes se realiza con el plugin `vite-imagetools`, que
 procesa los archivos durante la fase de build.
 
+El repositorio incluye configuración de **ESLint** y **Prettier** para mantener
+un estilo de código consistente. Puedes ejecutarlos manualmente con los
+scripts `npm run lint` y `npm run format`.
+
 ## Scripts Disponibles
 
 - `npm run dev` &ndash; Arranca Vite en modo desarrollo con recarga en caliente.
@@ -41,6 +45,8 @@ procesa los archivos durante la fase de build.
 - `npm run preview` &ndash; Sirve la build de producción de forma local.
 - `npm run compile` &ndash; Compila los archivos TypeScript a JavaScript.
 - `npm test` &ndash; Compila el proyecto y ejecuta la suite de pruebas.
+- `npm run lint` &ndash; Ejecuta ESLint sobre los archivos de `src/` y `tests/`.
+- `npm run format` &ndash; Aplica Prettier a todo el repositorio.
 
 ## Estructura del Repositorio
 
