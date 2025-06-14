@@ -7,16 +7,16 @@ interface PlaceholderSymbol {
 }
 
 export default class BootScene extends Phaser.Scene {
+    private progressBar!: any;
+    private progressBox!: any;
+
     constructor() {
         super('BootScene');
     }
 
-    preload() {
-        // Here we could preload assets if we had real graphics or sounds
-    }
+    preload(): void {
+        this.createLoadingGraphics();
 
-    create(): void {
-        // Generate placeholder textures for symbols
         const symbols: PlaceholderSymbol[] = [
             { key: 'CHERRY', color: 0xff0000, label: 'C' },
             { key: 'LEMON', color: 0xffff00, label: 'L' },
@@ -29,25 +29,35 @@ export default class BootScene extends Phaser.Scene {
         ];
 
         symbols.forEach(({ key, color, label }): void => {
-            const g = this.add.graphics();
-            g.fillStyle(color, 1);
-            g.fillRect(0, 0, 100, 100);
-
-            const text = this.add.text(50, 50, label, {
-                font: '64px Arial',
-                color: '#000'
-            }).setOrigin(0.5);
-
-            const rt = this.add.renderTexture(0, 0, 100, 100);
-            rt.draw(g);
-            rt.draw(text);
-            rt.saveTexture(key);
-
-            g.destroy();
-            text.destroy();
-            rt.destroy();
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width='100' height='100' fill='#${color.toString(16).padStart(6, '0')}'/><text x='50' y='70' font-family='Arial' font-size='64' text-anchor='middle' fill='#000'>${label}</text></svg>`;
+            const url = 'data:image/svg+xml,' + encodeURIComponent(svg);
+            this.load.image(key, url);
         });
 
+        this.load.on('progress', this.updateProgressBar, this);
+        this.load.on('complete', this.destroyLoadingGraphics, this);
+    }
+
+    create(): void {
         this.scene.start('GameScene');
+    }
+
+    private createLoadingGraphics(): void {
+        this.progressBox = this.add.graphics();
+        this.progressBox.fillStyle(0x222222, 0.8);
+        this.progressBox.fillRect(240, 270, 320, 30);
+
+        this.progressBar = this.add.graphics();
+    }
+
+    private updateProgressBar(value: number): void {
+        this.progressBar.clear();
+        this.progressBar.fillStyle(0xffffff, 1);
+        this.progressBar.fillRect(240, 270, 320 * value, 30);
+    }
+
+    private destroyLoadingGraphics(): void {
+        this.progressBar.destroy();
+        this.progressBox.destroy();
     }
 }
