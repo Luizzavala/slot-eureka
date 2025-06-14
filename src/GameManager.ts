@@ -30,6 +30,7 @@ export default class GameManager {
         this.ui = new BalanceDisplay(scene, 10, 10);
         this.createReels();
         this.ui.setBalance(this.balance);
+        this.ui.setBet(this.betPerLine);
     }
 
     private createReels(): void {
@@ -56,5 +57,10 @@ export default class GameManager {
             this.ui.setWin(win);
             this.ui.setBalance(this.balance);
         });
+    }
+
+    setBetPerLine(value: number): void {
+        this.betPerLine = value;
+        this.ui.setBet(this.betPerLine);
     }
 }

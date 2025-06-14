@@ -1,7 +1,6 @@
 # Eureka Slot
 
-Eureka Slot es un esqueleto base para una máquina tragamonedas 5x3 desarrollada
-con Phaser 3 y empaquetada con Vite.
+Eureka Slot es un esqueleto base para una máquina tragamonedas 5x3 desarrollada con Phaser 3 y empaquetada con Vite. Incluye un set de símbolos SVG con temática de **Frutas Clásicas** y un marco dorado básico para ilustrar la personalización visual.
 
 ## Arquitectura del Juego
 
@@ -11,6 +10,7 @@ con Phaser 3 y empaquetada con Vite.
 - **GameManager** controla el saldo, los carretes y evalúa las combinaciones.
 - **Reel** y **Symbol** representan los carretes y sus símbolos.
 - Los utilitarios en `utils/` generan las tiradas y calculan los premios.
+- La interfaz incluye botones de **Girar** y **Apuesta Max** junto a indicadores de saldo, apuesta y premio.
 
 ## Configuración del Entorno de Desarrollo
 
