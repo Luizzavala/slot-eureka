@@ -21,9 +21,12 @@ using Vite.
 
 3. **Create a production build**
 
-   ```bash
-   npm run build
-   ```
+ ```bash
+  npm run build
+  ```
+
+The Vite configuration compresses image assets and separates third-party
+libraries into a dedicated `vendor` chunk for faster loading.
 
 ## Repository Structure
 
