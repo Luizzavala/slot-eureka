@@ -30,8 +30,12 @@ libraries into a dedicated `vendor` chunk for faster loading.
 
 ## Repository Structure
 
-- `src/` – TypeScript source files for the game logic, scenes and utility
-  functions.
+- `src/` – TypeScript source files.
+  - `scenes/` – different Phaser scenes.
+  - `gameobjects/` – reusable game object classes like reels and symbols.
+  - `components/` – UI components such as the balance display.
+  - `utils/` – generic helper functions.
+  - `config/` – game configuration data.
 - `tests/` – small test suite executed with Node's built‑in test runner.
 
 ## Running Tests
