@@ -1,8 +1,9 @@
-import { generateSpin, evaluateWin } from './utils/reelLogic.js';
-import paylines from './utils/paylines.js';
-import { mulberry32 } from './utils/rng.js';
-import Reel from './reels/Reel.js';
-import BalanceDisplay from './ui/BalanceDisplay.js';
+import Phaser from 'phaser';
+import { generateSpin, evaluateWin } from './utils/reelLogic';
+import paylines from './utils/paylines';
+import { mulberry32 } from './utils/rng';
+import Reel from './reels/Reel';
+import BalanceDisplay from './ui/BalanceDisplay';
 
 interface GameConfig {
     symbols: string[];

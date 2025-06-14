@@ -1,5 +1,6 @@
-import GameManager from '../GameManager.js';
-import config from '../config/gameConfig.js';
+import Phaser from 'phaser';
+import GameManager from '../GameManager';
+import config from '../config/gameConfig';
 
 export default class GameScene extends Phaser.Scene {
     private manager!: GameManager;

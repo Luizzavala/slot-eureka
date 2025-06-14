@@ -1,4 +1,5 @@
-import Symbol from '../symbols/Symbol.js';
+import Phaser from 'phaser';
+import Symbol from '../symbols/Symbol';
 
 export default class Reel {
     private scene: Phaser.Scene;

@@ -11,6 +11,6 @@
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "main.ts", "globals.d.ts"],
+  "include": ["src/**/*.ts", "globals.d.ts", "phaser-shim.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
