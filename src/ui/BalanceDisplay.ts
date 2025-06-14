@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export default class BalanceDisplay {
     private scene: Phaser.Scene;
     private balanceText: Phaser.GameObjects.Text;

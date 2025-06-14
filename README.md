@@ -1,27 +1,29 @@
 # Eureka Slot
 
-Base skeleton for a classic 5x3 slot machine built with Phaser 3.
+Base skeleton for a classic 5x3 slot machine built with Phaser 3 and bundled
+using Vite.
 
 ## Getting Started
 
-1. **Install dependencies** (only necessary if you want to rebuild the TypeScript sources)
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. **Build the project**
+2. **Start the dev server**
+
+   ```bash
+   npm run dev
+   ```
+
+   Vite will serve the game at `http://localhost:5173`.
+
+3. **Create a production build**
 
    ```bash
    npm run build
    ```
-
-   This compiles the TypeScript files in `src/` into JavaScript.
-
-3. **Launch the game**
-
-   Open `index.html` in a modern browser. The game renders a placeholder set of
-   symbols and provides a single _SPIN_ button to play.
 
 ## Repository Structure
 
