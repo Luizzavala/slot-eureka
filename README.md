@@ -5,10 +5,8 @@ con Phaser 3 y empaquetada con Vite.
 
 ## Arquitectura del Juego
 
-El código se organiza en escenas y objetos de juego:
-
-- **BootScene** genera las texturas de ejemplo y redirige a la escena
-  principal.
+- **BootScene** precarga los assets base con una barra de progreso y luego
+  redirige a la escena principal.
 - **GameScene** contiene la lógica del juego y crea un `GameManager`.
 - **GameManager** controla el saldo, los carretes y evalúa las combinaciones.
 - **Reel** y **Symbol** representan los carretes y sus símbolos.
