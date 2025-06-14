@@ -31,6 +31,9 @@ producción:
 npm run build
 ```
 
+La optimización de imágenes se realiza con el plugin `vite-imagetools`, que
+procesa los archivos durante la fase de build.
+
 ## Scripts Disponibles
 
 - `npm run dev` &ndash; Arranca Vite en modo desarrollo con recarga en caliente.

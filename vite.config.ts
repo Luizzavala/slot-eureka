@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import viteImagemin from 'vite-plugin-imagemin';
+import { imagetools } from 'vite-imagetools';
 
 export default defineConfig({
   root: '.',
-  plugins: [viteImagemin()],
+  plugins: [imagetools()],
   build: {
     outDir: 'build',
     emptyOutDir: true,
