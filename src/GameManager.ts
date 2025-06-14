@@ -2,8 +2,8 @@ import Phaser from 'phaser';
 import { generateSpin, evaluateWin } from './utils/reelLogic';
 import paylines from './utils/paylines';
 import { mulberry32 } from './utils/rng';
-import Reel from './reels/Reel';
-import BalanceDisplay from './ui/BalanceDisplay';
+import Reel from './gameobjects/Reel';
+import BalanceDisplay from './components/BalanceDisplay';
 
 interface GameConfig {
     symbols: string[];
