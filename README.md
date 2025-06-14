@@ -1,50 +1,67 @@
 # Eureka Slot
 
-Base skeleton for a classic 5x3 slot machine built with Phaser 3 and bundled
-using Vite.
+Eureka Slot es un esqueleto base para una máquina tragamonedas 5x3 desarrollada
+con Phaser 3 y empaquetada con Vite.
 
-## Getting Started
+## Arquitectura del Juego
 
-1. **Install dependencies**
+El código se organiza en escenas y objetos de juego:
 
-   ```bash
-   npm install
-   ```
+- **BootScene** genera las texturas de ejemplo y redirige a la escena
+  principal.
+- **GameScene** contiene la lógica del juego y crea un `GameManager`.
+- **GameManager** controla el saldo, los carretes y evalúa las combinaciones.
+- **Reel** y **Symbol** representan los carretes y sus símbolos.
+- Los utilitarios en `utils/` generan las tiradas y calculan los premios.
 
-2. **Start the dev server**
+## Configuración del Entorno de Desarrollo
 
-   ```bash
-   npm run dev
-   ```
+Requiere Node.js 18 o superior. Para instalar las dependencias y ejecutar el
+servidor de desarrollo:
 
-   Vite will serve the game at `http://localhost:5173`.
+```bash
+npm install
+npm run dev
+```
 
-3. **Create a production build**
+El juego se servirá en `http://localhost:5173`. Para crear una build de
+producción:
 
- ```bash
-  npm run build
-  ```
+```bash
+npm run build
+```
 
-The Vite configuration compresses image assets and separates third-party
-libraries into a dedicated `vendor` chunk for faster loading.
+## Scripts Disponibles
 
-## Repository Structure
+- `npm run dev` &ndash; Arranca Vite en modo desarrollo con recarga en caliente.
+- `npm run build` &ndash; Genera la versión optimizada en `dist/`.
+- `npm run preview` &ndash; Sirve la build de producción de forma local.
+- `npm run compile` &ndash; Compila los archivos TypeScript a JavaScript.
+- `npm test` &ndash; Compila el proyecto y ejecuta la suite de pruebas.
 
-- `src/` – TypeScript source files.
-  - `scenes/` – different Phaser scenes.
-  - `gameobjects/` – reusable game object classes like reels and symbols.
-  - `components/` – UI components such as the balance display.
-  - `utils/` – generic helper functions.
-  - `config/` – game configuration data.
-- `tests/` – small test suite executed with Node's built‑in test runner.
+## Estructura del Repositorio
 
-## Running Tests
+- `src/` &ndash; Código fuente en TypeScript.
+  - `scenes/` &ndash; Escenas de Phaser.
+  - `gameobjects/` &ndash; Objetos del juego como carretes y símbolos.
+  - `components/` &ndash; Componentes de UI como el indicador de saldo.
+  - `utils/` &ndash; Funciones auxiliares y lógica de juego.
+  - `config/` &ndash; Datos de configuración de la partida.
+- `tests/` &ndash; Pequeña suite de pruebas con el runner nativo de Node.
 
-Execute the unit tests with:
+## Ejecutar Pruebas
+
+Para lanzar la suite de pruebas:
 
 ```bash
 npm test
 ```
 
-The script builds the project and then runs all files in `tests/` using
+El comando compila el código y luego ejecuta los archivos de `tests/` mediante
 `node --test`.
+
+## Cómo Contribuir
+
+1. Realiza un fork del repositorio y crea una rama para tu aporte.
+2. Asegúrate de que `npm test` pasa antes de abrir una PR.
+3. Describe claramente el cambio propuesto y cualquier información relevante.
